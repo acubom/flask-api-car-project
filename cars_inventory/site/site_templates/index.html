@@ -2,6 +2,25 @@
 
 {% block content %}
 
+{% with message = get_flashed_messages(with_categories = true) %}
+    {% if message %}
+        {% for cat, msg in message %}
+            {% if cat == 'user-created' %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ msg }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            
+            {% elif cat == 'auth-success' %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ msg }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
     <!-- Start of Header Section -->
 <div class="container">
     <header class="row">
