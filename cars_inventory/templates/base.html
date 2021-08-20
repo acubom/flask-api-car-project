@@ -8,22 +8,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="../static/css/main.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
 <title>Christian Car Inventory</title>
 </head>
 <body>
-    <!-- Navbar goes here -->
     <nav class="ct-nav">
         <div>
             <img src="../static/images/citydriver.svg" alt="">
         </div>
-        <!-- Nav items beging here -->
         <div>
             <ul id="horizontal-list">
                 <a href="{{ url_for('site.home') }}">
-                    <li>Car Inventory Project</li> 
+                    <li>Marvel Inventory Project</li> 
                 </a>
                 <a href="">
-                    <li>Cars</li>
+                    <li>Characters</li>
                 </a>
                 {% if current_user.is_authenticated %}
                     <a href="{{ url_for('site.profile') }}">
@@ -43,15 +43,12 @@
             </ul>
         </div>
     </nav>
-    <!-- End of Nav -->
 
     {% block content %}
 
     {% endblock content %}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
-    
+  
 
 </body>
 </html>

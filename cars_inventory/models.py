@@ -76,3 +76,20 @@ class CarSchema(ma.Schema):
 
 car_schema = CarSchema()
 cars_schema = CarSchema(many=True)
+
+
+id = db.Column(db.String, primary_key = True)
+    name = db.Column(db.String(100), nullable = False)
+    email = db.Column(db.String(150), nullable = False, unique = True)
+    password = db.Column(db.String, nullable = False)
+    token = db.Column(db.String, unique = True)
+    date_created = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
+    character 
+
+    id = db.Column(db.String, primary_key = True)
+    name = db.Column(db.String(100))
+    description = db.Column(db.String(100))
+    first_appeared = db.Column(db.String(50))    
+    super_power = db.Column(db.String(100))   
+    date_created = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)    
+    owner = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
